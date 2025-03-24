@@ -7,13 +7,6 @@
   <title>Saúde</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .scroll-area {
-      animation: scroll-up 20s linear infinite;
-    }
-    @keyframes scroll-up {
-      from { transform: translateY(100%); }
-      to { transform: translateY(-100%); }
-    }
 
     /* Estilo para a área de análise com scroll */
     .analysis-area {
@@ -22,6 +15,16 @@
       border: 1px solid #ddd;
       padding: 10px;
       background-color: #f7f7f7;
+    }
+
+    /* Estilo para a área preta com scroll */
+    .scroll-area {
+      height: 200px;
+      overflow-y: scroll;
+      background-color: black;
+      color: #00ff00;
+      padding: 10px;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -37,8 +40,8 @@
       <a href="financas.html" class="bg-yellow-500 text-white px-4 py-2 rounded" aria-label="Ir para a página de Finanças">Finanças</a>
     </div>
 
-    <section aria-label="Área de Dados" class="relative h-48 overflow-hidden bg-black text-green-200 p-4 rounded">
-      <div class="scroll-area absolute w-full">
+    <section aria-label="Área de Dados" class="relative h-48 overflow-hidden">
+      <div class="scroll-area" id="scrollArea">
         <p class="mb-2">Paciente A - Pressão alta</p>
         <p class="mb-2">Paciente B - Febre moderada</p>
         <p class="mb-2">Paciente C - Respiração irregular</p>
@@ -76,8 +79,23 @@
       });
     }
 
+    // Função para adicionar novas mensagens na área preta
+    function addNewMessage() {
+      let scrollArea = document.getElementById('scrollArea');
+      newHealthData.forEach(data => {
+        let p = document.createElement('p');
+        p.classList.add('mb-2');
+        p.textContent = `${data.patient} - ${data.condition}`;
+        scrollArea.appendChild(p);
+      });
+
+      // Rola para o fundo da área após adicionar nova mensagem
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
+
     // Adiciona os novos dados de saúde à análise
     addHealthData();
+    addNewMessage();
   </script>
 
   <script src="js/script.js"></script>
