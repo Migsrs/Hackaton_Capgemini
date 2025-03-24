@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saúde</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scroll-area {
+      animation: scroll-up 20s linear infinite;
+    }
+    @keyframes scroll-up {
+      from { transform: translateY(100%); }
+      to { transform: translateY(-100%); }
+    }
+
+    /* Estilo para a área de análise com scroll */
+    .analysis-area {
+      height: 200px; /* Ajuste a altura conforme necessário */
+      overflow-y: scroll;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="p-4 bg-green-800 text-white text-center">
+    <h1 class="text-2xl font-bold" aria-label="Página de Saúde">Saúde</h1>
+  </header>
+
+  <main class="p-6 space-y-6">
+    <div class="flex gap-2 justify-start">
+      <a href="ciberseguranca.html" class="bg-blue-500 text-white px-4 py-2 rounded" aria-label="Ir para a página de Cibersegurança">Cibersegurança</a>
+      <button disabled class="bg-green-500 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed" aria-disabled="true">Saúde</button>
+      <a href="financas.html" class="bg-yellow-500 text-white px-4 py-2 rounded" aria-label="Ir para a página de Finanças">Finanças</a>
+    </div>
+
+    <section aria-label="Área de Dados" class="relative h-48 overflow-hidden bg-black text-green-200 p-4 rounded">
+      <div class="scroll-area absolute w-full">
+        <p class="mb-2">Paciente A - Pressão alta</p>
+        <p class="mb-2">Paciente B - Febre moderada</p>
+        <p class="mb-2">Paciente C - Respiração irregular</p>
+        <p class="mb-2">Paciente D - Estado estável</p>
+      </div>
+    </section>
+
+    <section aria-label="Área de Análise">
+      <h2 class="text-lg font-semibold">Análise de Saúde</h2>
+      <div class="analysis-area" id="analysis">
+        <!-- A análise será preenchida aqui com base nos novos dados -->
+        <p>Pacientes com sintomas críticos serão priorizados no atendimento. Monitoramento contínuo em execução.</p>
+      </div>
+    </section>
+
+    <a href="index.html" class="inline-block mt-4 text-green-700 underline" aria-label="Voltar para a página principal">Voltar ao início</a>
+  </main>
+
+  <script>
+    // Simulação de novos dados sobre pacientes
+    const newHealthData = [
+      { patient: "Paciente E", condition: "Dor abdominal", priority: "Alta" },
+      { patient: "Paciente F", condition: "Dores no peito", priority: "Alta" },
+      { patient: "Paciente G", condition: "Dor nas costas", priority: "Média" }
+    ];
+
+    // Função para adicionar novos dados de saúde à análise
+    function addHealthData() {
+      let analysisSection = document.getElementById('analysis');
+      newHealthData.forEach(data => {
+        let p = document.createElement('p');
+        p.classList.add('text-sm', 'mt-2');
+        p.textContent = `${data.patient} - ${data.condition} (Prioridade: ${data.priority})`;
+        analysisSection.appendChild(p);
+      });
+    }
+
+    // Adiciona os novos dados de saúde à análise
+    addHealthData();
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

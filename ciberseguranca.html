@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cibersegurança</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scroll-area {
+      animation: scroll-up 20s linear infinite;
+    }
+    @keyframes scroll-up {
+      from { transform: translateY(100%); }
+      to { transform: translateY(-100%); }
+    }
+
+    /* Estilo para a área de análise com scroll */
+    .analysis-area {
+      height: 200px; /* Ajuste a altura conforme necessário */
+      overflow-y: scroll;
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <header class="p-4 bg-blue-800 text-white text-center">
+    <h1 class="text-2xl font-bold" aria-label="Página de Cibersegurança">Cibersegurança</h1>
+  </header>
+
+  <main class="p-6 space-y-6">
+    <div class="flex gap-2 justify-start">
+      <button disabled class="bg-blue-500 text-white px-4 py-2 rounded opacity-50 cursor-not-allowed" aria-disabled="true">Cibersegurança</button>
+      <a href="saude.html" class="bg-green-500 text-white px-4 py-2 rounded" aria-label="Ir para a página de Saúde">Saúde</a>
+      <a href="financas.html" class="bg-yellow-500 text-white px-4 py-2 rounded" aria-label="Ir para a página de Finanças">Finanças</a>
+    </div>
+
+    <section aria-label="Área de Dados" class="relative h-48 overflow-hidden bg-black text-green-400 p-4 rounded">
+      <div class="scroll-area absolute w-full" id="ip-list">
+        <!-- A lista de IPs será atualizada aqui -->
+        <p class="mb-2">192.168.1.5 - Conexão estabelecida</p>
+        <p class="mb-2">192.168.1.6 - Atividade suspeita</p>
+        <p class="mb-2">10.0.0.8 - Padrão anômalo detectado</p>
+        <p class="mb-2">172.16.0.3 - Verificação em andamento</p>
+      </div>
+    </section>
+
+    <section aria-label="Área de Análise">
+      <h2 class="text-lg font-semibold">Análise de Segurança</h2>
+      <div class="analysis-area" id="analysis">
+        <!-- A análise será preenchida aqui com base nos IPs -->
+        <p>Detectamos atividades fora do padrão de IPs. Medidas preventivas foram acionadas automaticamente.</p>
+      </div>
+    </section>
+
+    <a href="index.html" class="inline-block mt-4 text-blue-700 underline" aria-label="Voltar para a página principal">Voltar ao início</a>
+  </main>
+
+  <script>
+    // Simulação de IPs sendo recebidos de uma aplicação
+    const newIps = [
+      { ip: "192.168.1.7", status: "Atividade suspeita" },
+      { ip: "10.0.1.10", status: "Padrão anômalo detectado" },
+      { ip: "172.20.0.5", status: "Conexão estabelecida" }
+    ];
+
+    // Função para adicionar novos IPs à lista
+    function addNewIps() {
+      let ipList = document.getElementById('ip-list');
+      newIps.forEach(ipData => {
+        let p = document.createElement('p');
+        p.classList.add('mb-2');
+        p.textContent = `${ipData.ip} - ${ipData.status}`;
+        ipList.appendChild(p);
+      });
+    }
+
+    // Função para adicionar análise de segurança
+    function addSecurityAnalysis() {
+      let analysisSection = document.getElementById('analysis');
+      newIps.forEach(ipData => {
+        let p = document.createElement('p');
+        p.classList.add('text-sm', 'mt-2');
+        p.textContent = `IP: ${ipData.ip} - Analisando: ${ipData.status}. Medidas preventivas acionadas.`;
+        analysisSection.appendChild(p);
+      });
+    }
+
+    // Adiciona os IPs e a análise
+    addNewIps();
+    addSecurityAnalysis();
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

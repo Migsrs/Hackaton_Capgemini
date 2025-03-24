@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site com foco em Cibersegurança, Saúde e Finanças, com acessibilidade e responsividade">
+  <title>Painel Principal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+  <header class="p-4 bg-blue-800 text-white text-center">
+    <h1 class="text-3xl font-bold" aria-label="Título principal do site">Painel de Monitoramento</h1>
+  </header>
+
+  <section class="text-center py-6">
+    <h2 class="text-2xl font-semibold">Bem-vindo ao <span class="text-blue-500">[NOME BEM LEGAL]</span></h2>
+    <p class="text-lg mt-4">Selecione um dos assuntos para conseguir visualizar os dados e obter uma análise detalhada.</p>
+  </section>  
+
+
+  <main class="flex-grow p-6 flex items-center justify-center">
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-3 w-full max-w-6xl">
+      <a href="ciberseguranca.html" aria-label="Ir para a página de Cibersegurança" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-400">
+        <h2 class="text-xl font-semibold">Cibersegurança</h2>
+        <p class="text-sm mt-2">Análise de tráfego de IPs e detecção de padrões anômalos.</p>
+      </a>
+
+      <a href="saude.html" aria-label="Ir para a página de Saúde" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-green-100 focus:outline-none focus:ring-4 focus:ring-green-400">
+        <h2 class="text-xl font-semibold">Saúde</h2>
+        <p class="text-sm mt-2">Monitoramento de pacientes e avaliação de urgência médica.</p>
+      </a>
+
+      <a href="financas.html" aria-label="Ir para a página de Finanças" class="bg-white rounded-2xl shadow-lg p-6 hover:bg-yellow-100 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+        <h2 class="text-xl font-semibold">Finanças</h2>
+        <p class="text-sm mt-2">Análise de dados de mercado e relatórios financeiros.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer class="text-center p-4 bg-gray-200 text-sm" aria-label="Rodapé do site">
+    &copy; 2025 - Sistema Integrado
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
