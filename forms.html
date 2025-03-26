@@ -20,31 +20,21 @@
   <!-- Tela de Inserção de Dados -->
   <div id="dataInput" class="flex h-screen items-center justify-center">
     <form id="inputForm" class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" aria-label="Formulário de Inserção de Dados">
-      <h2 class="text-2xl font-bold mb-6 text-center">Insira suas informações</h2>
+      <h2 class="text-2xl font-bold mb-6 text-center">Insira os dados</h2>
 
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="averageGrades">Notas Médias:</label>
-        <input id="averageGrades" type="number" step="0.01" min="0" max="10" placeholder="Ex: 8.5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyTime">Tempo Máximo para Estudo (horas/semana):</label>
-        <input id="studyTime" type="number" placeholder="Ex: 10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="deadline">Data Limite:</label>
-        <input id="deadline" type="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
-      </div>
-
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Matéria:</label>
-        <input id="subject" type="text" placeholder="Ex: Matemática" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyPlan">Pasta com os currículos:</label>
+        <input id="resumes" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true" webkitdirectory multiple>
       </div>
 
       <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyPlan">Plano de Estudo (arquivo):</label>
-        <input id="studyPlan" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyPlan">Arquivo com a descrição da vaga:</label>
+        <input id="description" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyPlan">Arquivo com políticas e valores da empresa:</label>
+        <input id="policies" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
       </div>
 
       <div class="flex items-center justify-between">
