@@ -1,0 +1,29 @@
+{
+  "name": "hackaton_capgemini",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migsrs/Hackaton_Capgemini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Migsrs/Hackaton_Capgemini/issues"
+  },
+  "homepage": "https://github.com/Migsrs/Hackaton_Capgemini#readme",
+  "description": "",
+  "dependencies": {
+    "@langchain/community": "^0.3.37",
+    "@langchain/core": "^0.3.43",
+    "@langchain/openai": "^0.5.0",
+    "dotenv": "^16.4.7",
+    "langchain": "^0.3.19",
+    "pdf-parse": "^1.1.1"
+  }
+}
