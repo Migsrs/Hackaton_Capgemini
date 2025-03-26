@@ -16,69 +16,9 @@
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
-  <!-- Menu Inicial -->
-  <div id="menu" class="flex h-screen items-center justify-center">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-4">Recomendação de Curso</h1>
-      <div>
-        <button onclick="showDataInput()" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 mr-4">Inserir Dados</button>
-        <button onclick="showAboutUs()" class="px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Sobre Nós</button>
-      </div>
-    </div>
-  </div>
-
-<!-- Tela Sobre Nós -->
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <link rel="stylesheet" href="css/style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sobre nós - Conheça nossa equipe de Engenharia da Computação">
-  <title>Sobre Nós</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
-  <header class="p-4 bg-blue-800 text-white text-center">
-    <h1 class="text-3xl font-bold" aria-label="Título principal da página">Sobre Nós</h1>
-  </header>
-
-  <main class="flex-grow p-6 flex flex-col items-center">
-    <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
-        <img src="imagens/Carol.png" alt="Foto do Membro 1" class="w-32 h-32 object-cover rounded-full mb-4">
-        <h2 class="text-xl font-semibold">Caroline Atolini de Souza</h2>
-        <p class="text-gray-700 mt-2">Descrição sobre o primeiro integrante do grupo.</p>
-      </div>
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
-        <img src="imagens/Catarina.png" alt="Foto do Membro 2" class="w-32 h-32 object-cover rounded-full mb-4">
-        <h2 class="text-xl font-semibold">Catarina Borborema Senkiio</h2>
-        <p class="text-gray-700 mt-2">Descrição sobre o segundo integrante do grupo.</p>
-      </div>
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
-        <img src="imagens/Miguel.png" alt="Foto do Membro 3" class="w-32 h-32 object-cover rounded-full mb-4">
-        <h2 class="text-xl font-semibold">Miguel Ryan Silva</h2>
-        <p class="text-gray-700 mt-2">Descrição sobre o terceiro integrante do grupo.</p>
-      </div>
-      <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-lg">
-        <img src="imagens/Rafael.png" alt="Foto do Membro 4" class="w-32 h-32 object-cover rounded-full mb-4">
-        <h2 class="text-xl font-semibold">Rafael Rego dos Santos Caldeira</h2>
-        <p class="text-gray-700 mt-2">Descrição sobre o quarto integrante do grupo.</p>
-      </div>
-    </div>
-    <button onclick="window.location.href='index.html'" class="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">Voltar ao Menu</button>
-  </main>
-
-  <footer class="text-center p-4 bg-gray-200 text-sm" aria-label="Rodapé do site">
-    &copy; 2025 - Grupo de Engenharia da Computação - Mackenzie
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
 
   <!-- Tela de Inserção de Dados -->
-  <div id="dataInput" class="hidden flex h-screen items-center justify-center">
+  <div id="dataInput" class="flex h-screen items-center justify-center">
     <form id="inputForm" class="w-full max-w-lg bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" aria-label="Formulário de Inserção de Dados">
       <h2 class="text-2xl font-bold mb-6 text-center">Insira suas informações</h2>
 
@@ -111,7 +51,7 @@
         <button onclick="processForm()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
           Submeter
         </button>
-        <button onclick="showMenu()" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+        <button type="button" onclick="window.location.href='menu.html'" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
           Voltar ao Menu
         </button>
       </div>
@@ -123,40 +63,10 @@
     <div class="text-center">
       <h2 class="text-2xl font-bold mb-4">Resultado da Análise</h2>
       <div id="analysisResult" class="text-lg mb-4">Aguardando análise...</div>
-      <button onclick="showMenu()" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Voltar ao Menu</button>
+      <button onclick="window.location.href='menu.html'" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Voltar ao Menu</button>
     </div>
   </div>
 
-  <script>
-    function showDataInput() {
-      document.getElementById('menu').classList.add('hidden');
-      document.getElementById('dataInput').classList.remove('hidden');
-    }
-
-    function showAboutUs() {
-      document.getElementById('menu').classList.add('hidden');
-      document.getElementById('aboutUs').classList.remove('hidden');
-    }
-
-    function showMenu() {
-      document.getElementById('dataInput').classList.add('hidden');
-      document.getElementById('aboutUs').classList.add('hidden');
-      document.getElementById('result').classList.add('hidden');
-      document.getElementById('menu').classList.remove('hidden');
-    }
-
-    function processForm() {
-      // Processa os dados inseridos (esse processamento seria feito externamente)
-      const grades = document.getElementById('averageGrades').value;
-      const time = document.getElementById('studyTime').value;
-      const deadline = document.getElementById('deadline').value;
-      const subject = document.getElementById('subject').value;
-
-      // Simula o envio para análise e exibe a tela de resultado
-      document.getElementById('dataInput').classList.add('hidden');
-      document.getElementById('result').classList.remove('hidden');
-      document.getElementById('analysisResult').textContent = `Análise realizada para Notas Médias: ${grades}, Tempo: ${time}h/semana, Data Limite: ${deadline}, Matéria: ${subject}. Aguarde recomendação.`;
-    }
-  </script>
+  <script src="js/forms.js"></script>
 </body>
 </html>
