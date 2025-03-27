@@ -47,7 +47,6 @@ async function handleButtonClick() {
   ul.innerHTML = "<div id=\"response\"></div>"
   ul.classList.remove("hidden");
 
-  console.log(ul);
 
   const responseDiv = document.getElementById('response');
   responseDiv.innerHTML = 'Carregando...';
@@ -58,8 +57,6 @@ async function handleButtonClick() {
   const combinedResumes = await readPDF(files);  // Variável para armazenar o texto combinado de todos os PDFs
   const descriptionText = await readPDF(desc)
 
-  console.log(combinedResumes);
-  console.log(descriptionText);
 
   
 
@@ -67,12 +64,25 @@ async function handleButtonClick() {
 
     // Enviar o texto combinado para o servidor
 
-    const firstPrompt = `Prompt: Classify the following resumes based on the role description provided in the context. Answer with the top 5 candidates in a rank and explain, in few words, what was the criteria of each candidate position. After that, you must send a personalized email ONLY to the top 5 candidates, including tailored questions generated from the job description and their submitted resumes. The email address of each candidate can be obtained from its resume. 
+    const firstPrompt = `Prompt: Classifique os currículos a seguir com base na descrição da vaga fornecida no contexto. Liste os 5 melhores candidatos em ordem de classificação e explique em 30 palavras ao menos quais pontos foram analisados para fazer essa classificação.  
+    Em seguida, envie um e-mail personalizado **apenas** para os 5 melhores candidatos, seguindo o seguinte formato:
+
+    \"Prezado(a) {Nome}.
+
+    Gostaríamos de convidá-lo(a) para participar de um processo seletivo em nossa empresa com base no seu impressionante currículo. Sua experiência e habilidades são exatamente o que estamos procurando para nossa equipe.
+
+    Favor entrar em contato conosco para mais detalhes.
+
+    Atenciosamente,
+    Equipe de Recrutamento.\"
+
+    Substitua {Nome} pelo nome do candidato conforme informado.
+
+    **Não** utilize nenhuma ferramenta que não está disponível para o agente.
     
-    Candidates: ${combinedResumes}.`;
+    Candidatos: ${combinedResumes}.`;
 
     const response = await sendTextToServer(firstPrompt, descriptionText);
-    console.log(response);
     for(let i = 1; i < response.response.messages.length; i++) {
       const item = response.response.messages[i];
       const li = document.createElement("li");

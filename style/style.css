@@ -3,7 +3,7 @@
 @media (min-width: 1024px) { /* para desktops */ }
 
 body {
-  height: auto;
+  height: 100vh;
   overflow-y: scroll;
 }
 

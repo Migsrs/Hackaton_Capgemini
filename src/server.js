@@ -36,7 +36,6 @@ app.post('/execute', async (req, res) => {
     await client.connect(transport);
 
     const tools = await loadMcpTools("mail", client);
-    console.log(tools);
     const agent = createReactAgent({ llm: model, tools });
 
     const agentResponse = await agent.invoke({
