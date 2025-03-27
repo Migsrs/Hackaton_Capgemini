@@ -13,6 +13,12 @@ Para integrar uma interface web com a API da OpenAI e ferramentas baseadas no **
 - **Backend:** Node.js v22.14.0, Python v3.13.2  
 - **IA & API:** OpenAI API, MCP  
 
+## 💡 Fluxo do Agente de IA
+O agente de IA segue um fluxo autônomo para realizar a análise dos currículos e enviar as mensagens aos candidatos. Veja abaixo o diagrama ilustrando esse processo:
+
+## 🏗️ Arquitetura do Sistema
+A arquitetura do sistema foi projetada para garantir a escalabilidade e eficiência no processamento de dados. Abaixo, você pode ver o diagrama da arquitetura que integra as várias partes do sistema:
+
 ## 🎥 Demonstração  
 Confira a ferramenta em funcionamento:  
 
