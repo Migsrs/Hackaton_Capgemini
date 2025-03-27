@@ -23,6 +23,7 @@ A arquitetura do sistema foi projetada para garantir a escalabilidade e eficiên
 
 ## 🎥 Demonstração  
 Confira a ferramenta em funcionamento:  
+https://drive.google.com/file/d/117BmVjxd44H_D8chPi1iiCA_fK75NObs/view?usp=sharing
 
 ## 👥 Membros da Equipe  
 Nossa equipe é composta por estudantes de **Engenharia da Computação** da **Universidade Presbiteriana Mackenzie**:  
