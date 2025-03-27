@@ -1,20 +1,50 @@
-/* Estilo adicional para áreas de rolagem tipo créditos de filme */
-.scroll-area {
-    animation: scroll-up 20s linear infinite;
-  }
-  
-  @keyframes scroll-up {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(-100%);
-    }
-  }
-  
-  /* Acessibilidade: foco claro em elementos interativos */
-  :focus-visible {
-    outline: 2px solid #2563eb; /* azul Tailwind */
-    outline-offset: 2px;
-  }
+@media (min-width: 640px) { /* para dispositivos pequenos */ }
+@media (min-width: 768px) { /* para tablets */ }
+@media (min-width: 1024px) { /* para desktops */ }
+
+body {
+  height: auto;
+  overflow-y: scroll;
+}
+
+/* Garantir que os containers de tela ocupem o máximo de altura e ativem a rolagem quando necessário */
+.h-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adiciona a barra de rolagem nas telas de inserção de dados e resultado, se necessário */
+#dataInput, #result {
+  overflow-y: auto;
+  width: 100%;
+}
+
+#response {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 5px;
+}
+
+#sequencia {
+  max-height: 300px; /* Limita a altura para evitar que ocupe toda a tela */
+  overflow-y: auto;  /* Adiciona rolagem caso ultrapasse a altura */
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 20px;
+  list-style: none;
+  background: #fff;
+  border-radius: 5px;
+}
+
+#sequencia li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+#dataInput {
+  overflow-y: auto; /* Evita que o conteúdo fique cortado */
+}
   

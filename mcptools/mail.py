@@ -5,15 +5,15 @@ import resend
 mcp = FastMCP("Mail")
 
 @mcp.tool()
-def send_email(message: str, dest_address: str):
+def send_email(subject: str, message: str, dest_address: str):
     """Sends an email to the specified address with the provided message"""
     try:
-        resend.api_key = "placeholder"
+        
 
         params = {
             "from": "Acme <onboarding@resend.dev>",
             "to": ["delivered@resend.dev"],
-            "subject": "Hello world",
+            "subject": subject,
             "html": message
         }
 

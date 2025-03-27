@@ -8,12 +8,7 @@
   <meta name="author" content="Equipe de Desenvolvimento">
   <title>Recomendação de Curso</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Tornando o site responsivo */
-    @media (min-width: 640px) { /* para dispositivos pequenos */ }
-    @media (min-width: 768px) { /* para tablets */ }
-    @media (min-width: 1024px) { /* para desktops */ }
-  </style>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body class="bg-gray-100 text-gray-900">
 
@@ -32,7 +27,10 @@
         <input id="description" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
       </div>
 
-      <div id="response"></div>
+      
+      <ul id="sequencia" class="hidden mt-4 mb-6 max-h-80 overflow-y-auto bg-white shadow-md rounded-lg p-4 space-y-3 border border-gray-200">
+        <div id="response"></div>
+      </ul>
 
       <div class="flex items-center justify-between">
         <button id="executeBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
@@ -55,6 +53,7 @@
     </div>
   </div>
 
-  <script src="src/client.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script type="module" src="src/client.js"></script>
 </body>
 </html>
