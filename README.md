@@ -1,4 +1,4 @@
-# 🏆 Hackathon Capgemini 2025 - Inovando com Agentes de IA Autônomos  
+![Captura de tela 2025-03-27 135029](https://github.com/user-attachments/assets/76a988e1-3492-488a-90fa-e0bf481f7061)# 🏆 Hackathon Capgemini 2025 - Inovando com Agentes de IA Autônomos  
 
 ## 📌 Objetivo  
 Desenvolver um agente de IA autônomo capaz de tomar decisões de forma independente e automatizar tarefas que anteriormente exigiam intervenção humana.  
@@ -15,9 +15,11 @@ Para integrar uma interface web com a API da OpenAI e ferramentas baseadas no **
 
 ## 💡 Fluxo do Agente de IA
 O agente de IA segue um fluxo autônomo para realizar a análise dos currículos e enviar as mensagens aos candidatos. Veja abaixo o diagrama ilustrando esse processo:
+![Captura de tela 2025-03-27 134840](https://github.com/user-attachments/assets/53678f7c-4350-4391-9188-478c45f3f941)
 
 ## 🏗️ Arquitetura do Sistema
 A arquitetura do sistema foi projetada para garantir a escalabilidade e eficiência no processamento de dados. Abaixo, você pode ver o diagrama da arquitetura que integra as várias partes do sistema:
+![Captura de tela 2025-03-27 135029](https://github.com/user-attachments/assets/43edd13d-8a60-41d8-909e-a96db3769ff1)
 
 ## 🎥 Demonstração  
 Confira a ferramenta em funcionamento:  
