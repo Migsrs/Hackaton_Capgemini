@@ -1,4 +1,4 @@
-![Captura de tela 2025-03-27 135029](https://github.com/user-attachments/assets/76a988e1-3492-488a-90fa-e0bf481f7061)# 🏆 Hackathon Capgemini 2025 - Inovando com Agentes de IA Autônomos  
+# 🏆 Hackathon Capgemini 2025 - Inovando com Agentes de IA Autônomos  
 
 ## 📌 Objetivo  
 Desenvolver um agente de IA autônomo capaz de tomar decisões de forma independente e automatizar tarefas que anteriormente exigiam intervenção humana.  
