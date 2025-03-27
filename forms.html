@@ -32,18 +32,16 @@
         <input id="description" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
       </div>
 
-      <div class="mb-6">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="studyPlan">Arquivo com políticas e valores da empresa:</label>
-        <input id="policies" type="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" aria-required="true">
-      </div>
+      <div id="response"></div>
 
       <div class="flex items-center justify-between">
-        <button onclick="processForm()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        <button id="executeBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
           Submeter
         </button>
-        <button type="button" onclick="window.location.href='menu.html'" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+        <button type="button" onclick="window.location.href='index.html'" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
           Voltar ao Menu
         </button>
+        
       </div>
     </form>
   </div>
@@ -53,10 +51,10 @@
     <div class="text-center">
       <h2 class="text-2xl font-bold mb-4">Resultado da Análise</h2>
       <div id="analysisResult" class="text-lg mb-4">Aguardando análise...</div>
-      <button onclick="window.location.href='menu.html'" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Voltar ao Menu</button>
+      <button onclick="window.location.href='index.html'" class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Voltar ao Menu</button>
     </div>
   </div>
 
-  <script src="js/forms.js"></script>
+  <script src="src/client.js"></script>
 </body>
 </html>
