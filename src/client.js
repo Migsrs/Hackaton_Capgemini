@@ -7,6 +7,7 @@ document.getElementById('executeBtn').addEventListener('click', handleButtonClic
 
       try {
         const agentResponse = await executeAgentCommand();
+        console.log(agentResponse);
         console.log(agentResponse.response.messages[agentResponse.response.messages.length-1].kwargs.content);
         responseDiv.innerHTML = `Resposta: ${agentResponse.response.messages[agentResponse.response.messages.length-1].kwargs.content}`;
         responseDiv.classList.remove('loading');
@@ -25,7 +26,7 @@ document.getElementById('executeBtn').addEventListener('click', handleButtonClic
         },
         body: JSON.stringify({
           modelName: 'gpt-4',
-          expression: "what's (3 + 5) x 12?",
+          expression: "Send a mail to robert@mail.com telling that I wont be able to go to the dinner tomorrow.",
         }),
       });
 
