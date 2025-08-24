@@ -1,6 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 import resend
 import os
+import time
 
 mcp = FastMCP("Mail")
 
@@ -18,6 +19,7 @@ def send_email(subject: str, message: str, dest_address: str):
         }
 
         email = resend.Emails.send(params)
+        time.sleep(1)
         return "Sucess"
     except Exception as e:
         print(str(e))
@@ -25,4 +27,3 @@ def send_email(subject: str, message: str, dest_address: str):
 
 if __name__ == "__main__":
     mcp.run(transport="stdio")
-    # print(send_email("Hello", "<b>Mensagem</b>", "delivered@resend.dev"))
