@@ -103,5 +103,5 @@ app.post('/execute', async (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-	console.log(`Servidor ouvindo na porta ${PORT}`);
+	console.log(`Servidor ouvindo em http://${HOST}:${PORT}`);
 });

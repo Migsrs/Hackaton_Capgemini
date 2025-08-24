@@ -116,7 +116,8 @@ async function processPDF(file) {
 }
 
 async function sendTextToServer(combinedResumes, descriptionText) {
-  const response = await fetch('http://localhost:3000/execute', {
+  const API_BASE = window.location.origin;
+  const response = await fetch(`${API_BASE}/execute`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
