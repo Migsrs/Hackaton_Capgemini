@@ -12,7 +12,8 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+const HOST = '0.0.0.0';
 
 app.use(cors()); // Permite requisições de qualquer origem
 
@@ -103,6 +104,6 @@ app.post('/execute', async (req, res) => {
 	}
 });
 
-app.listen(port, () => {
+app.listen(PORT, HOST, () => {
 	console.log(`Servidor ouvindo na porta ${port}`);
 });
