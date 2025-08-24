@@ -19,11 +19,8 @@ app.use(cors()); // Permite requisições de qualquer origem
 
 app.use(express.json());
 
-app.get('/status', async (req, res) => {
-	return JSON.stringify({
-		status: 200,
-		message: 'Server up and running...',
-	});
+app.get('/status', (req, res) => {
+  res.json({ status: 200, message: 'Server up and running...' });
 });
 
 app.post('/execute', async (req, res) => {
