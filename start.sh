@@ -5,6 +5,6 @@ set -e
 
 http-server . -p ${STATIC_PORT:-8080} -a 0.0.0.0 &
 node ./src/server.js
-python ./mcptools/main.py
+python ./mcptools/mail.py
 
 wait -n

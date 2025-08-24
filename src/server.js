@@ -69,13 +69,14 @@ app.post('/execute', async (req, res) => {
 		const transport = new StdioClientTransport({
 			command: 'python',
 			args: ['./mcptools/mail.py'],
+			env: process.env,
 		});
 
 		const client = new Client({
 			name: 'mail-client',
 			version: '1.0.0',
 		});
-
+		
 		await client.connect(transport);
 
 		const tools = await loadMcpTools('mail', client);
