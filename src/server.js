@@ -25,7 +25,7 @@ app.post('/execute', async (req, res) => {
 
     const transport = new StdioClientTransport({
       command: 'python',
-      args: ['./mcptools/mail.py'],
+      args: ['../mcptools/mail.py'],
     });
 
     const client = new Client({
