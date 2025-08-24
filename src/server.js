@@ -98,6 +98,7 @@ app.post('/execute', async (req, res) => {
 		await client.close();
 
 		res.json({ response: filteredMessages });
+		
 	} catch (e) {
 		console.log(e);
 		res.status(500).json({ error: e.message });
@@ -105,5 +106,5 @@ app.post('/execute', async (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-	console.log(`Servidor ouvindo na porta ${port}`);
+	console.log(`Servidor ouvindo na porta ${PORT}`);
 });
