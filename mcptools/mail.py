@@ -9,7 +9,6 @@ mcp = FastMCP("Mail")
 @mcp.tool()
 def send_email(subject: str, message: str, dest_address: str):
     """Sends an email to the specified address with the provided message"""
-    return "Success"
     load_dotenv(Path(__file__).parent.parent /".env")
     resend.api_key = os.environ["RESEND_API_KEY"]
     try:
