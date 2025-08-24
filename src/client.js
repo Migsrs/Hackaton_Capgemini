@@ -16,9 +16,7 @@ async function handleButtonClick() {
     return;
   }
 
-  const desc = description.files[0];
-
-
+  const desc = description.files;
 
   async function readPDF(files) {
     let combinedText = '';
@@ -55,36 +53,14 @@ async function handleButtonClick() {
   
 
   const combinedResumes = await readPDF(files);  // Variável para armazenar o texto combinado de todos os PDFs
-  const descriptionText = await readPDF(desc)
-
-
-  
+  const descriptionText = await readPDF(desc); 
 
   try {
 
     // Enviar o texto combinado para o servidor
-
-    const firstPrompt = `Prompt: Classifique os currículos a seguir com base na descrição da vaga fornecida no contexto. Liste os 5 melhores candidatos em ordem de classificação e explique em 30 palavras ao menos quais pontos foram analisados para fazer essa classificação.  
-    Em seguida, envie um e-mail personalizado **apenas** para os 5 melhores candidatos, seguindo o seguinte formato:
-
-    \"Prezado(a) {Nome}.
-
-    Gostaríamos de convidá-lo(a) para participar de um processo seletivo em nossa empresa com base no seu impressionante currículo. Sua experiência e habilidades são exatamente o que estamos procurando para nossa equipe.
-
-    Favor entrar em contato conosco para mais detalhes.
-
-    Atenciosamente,
-    Equipe de Recrutamento.\"
-
-    Substitua {Nome} pelo nome do candidato conforme informado.
-
-    **Não** utilize nenhuma ferramenta que não está disponível para o agente.
-    
-    Candidatos: ${combinedResumes}.`;
-
-    const response = await sendTextToServer(firstPrompt, descriptionText);
-    for(let i = 1; i < response.response.messages.length; i++) {
-      const item = response.response.messages[i];
+    const response = await sendTextToServer(combinedResumes, descriptionText);
+    for(let i = 1; i < response.response.length; i++) { 
+      const item = response.response[i];
       const li = document.createElement("li");
       li.textContent = item.kwargs.content;
 
@@ -139,16 +115,16 @@ async function processPDF(file) {
   });
 }
 
-async function sendTextToServer(expression, context) {
+async function sendTextToServer(combinedResumes, descriptionText) {
   const response = await fetch('http://localhost:3000/execute', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ 
-      expression: `${expression}`,
-      context: context 
-    }),  // Envia o texto concatenado
+      combinedResumes: `${combinedResumes}`,
+      descriptionText: `${descriptionText}`,
+    }),
   });
 
   if (!response.ok) {
