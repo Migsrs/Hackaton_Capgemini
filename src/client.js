@@ -1,10 +1,3 @@
-import * as pdfjsLib from "pdfjs-dist";
-
-pdfjsLib.GlobalWorkerOptions.workerPort = new Worker(
-  'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build/pdf.worker.min.mjs',
-  { type: 'module' }
-);
-
 document.getElementById('executeBtn').addEventListener('click', handleButtonClick);
 
 async function handleButtonClick() {
